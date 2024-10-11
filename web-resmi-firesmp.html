@@ -5,125 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FireSMP Official Website</title>
     <style>
+        /* Mengatur body dan menghilangkan scroll horizontal */
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
-            margin: 0;
-            padding: 0;
+            overflow-x: hidden; /* Mematikan scroll kiri-kanan */
         }
 
+        /* Mengatur header agar tidak terlalu besar dan tetap di atas */
         header {
             background-color: #ff4500;
             color: white;
-            padding: 15px;
+            padding: 10px; /* Kurangi padding untuk header */
             text-align: center;
+            position: fixed; /* Menjadikan header tetap di atas saat di-scroll */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
+        /* Mengurangi ukuran teks di header */
+        header h1 {
+            font-size: 1.5em; /* Ukuran lebih kecil untuk layar mobile */
+            margin: 0;
+        }
+
+        /* Mengatur gambar agar responsif */
+        img {
+            max-width: 100%; /* Gambar tidak akan lebih lebar dari elemen induknya */
+            height: auto; /* Proporsi gambar tetap */
+            display: block; /* Menghilangkan space di bawah gambar */
+            margin: 10px auto; /* Agar gambar berada di tengah */
+            border-radius: 8px; /* Opsional: Membuat sudut gambar membulat */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opsional: Memberikan bayangan */
+        }
+
+        /* Mengatur konten agar tidak tertutup oleh header dan footer */
         section {
             padding: 15px;
-            margin: 10px;
+            margin: 60px 10px 60px 10px; /* Beri jarak atas untuk header dan bawah untuk footer */
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
 
-        .server-status {
-            font-size: 1.2em;
-        }
-
-        .status-on { color: green; }
-        .status-off { color: red; }
-        .status-maintenance { color: orange; }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin: 5px 0;
-        }
-
-        h2, h3 {
-            color: #ff4500;
-            font-size: 1.3em;
-        }
-
+        /* Mengatur footer agar tetap di bawah dan tidak ikut scroll */
         footer {
             text-align: center;
-            padding: 15px;
+            padding: 10px; /* Kurangi padding untuk footer */
             background-color: #333;
             color: white;
-            position: relative;
+            position: fixed; /* Menjadikan footer tetap di bawah saat di-scroll */
             bottom: 0;
             width: 100%;
+            z-index: 1000;
         }
 
-        /* CSS untuk responsif di layar kecil */
+        /* Untuk memastikan tidak ada elemen yang keluar dari layar */
+        iframe, video, div {
+            max-width: 100%; /* Pastikan media atau elemen block lainnya mengikuti ukuran layar */
+        }
+
+        /* Gambar dan konten di layar kecil (contoh: layar HP) */
         @media only screen and (max-width: 600px) {
-            body {
-                font-size: 0.9em;
-            }
-
-            header {
-                font-size: 1.5em;
-            }
-
-            h2, h3 {
-                font-size: 1.2em;
+            header h1 {
+                font-size: 1.2em; /* Header lebih kecil untuk layar HP */
             }
 
             section {
-                padding: 10px;
-                margin: 5px;
+                margin: 50px 5px 50px 5px; /* Margin disesuaikan dengan ukuran layar kecil */
             }
 
-            ul li {
-                margin: 8px 0;
+            footer {
+                font-size: 0.9em; /* Teks footer lebih kecil di layar kecil */
             }
         }
     </style>
-    <style>
-    /* Style gambar agar responsif */
-    img {
-        max-width: 100%; /* Gambar tidak akan lebih lebar dari elemen induknya */
-        height: auto; /* Proporsi gambar tetap */
-        display: block; /* Menghilangkan space di bawah gambar */
-        margin: 10px auto; /* Agar gambar berada di tengah */
-        border-radius: 8px; /* Opsional: Membuat sudut gambar membulat */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opsional: Memberikan bayangan */
-    }
-
-    /* Gambar di layar kecil (contoh: layar HP) */
-    @media only screen and (max-width: 600px) {
-        img {
-            max-width: 90%; /* Memberikan sedikit ruang di sekeliling gambar */
-        }
-    }
-</style>
 </head>
 <body>
 
 <header>
     <h1>FIRESMP - Official Website</h1>
+    <img src="fire_smp_logo.jpg" alt="Logo Fire SMP">
 </header>
-
-<img src="firesmp.png"></img>
 
 <section>
     <h2>Server Status</h2>
     <p class="server-status">
-        On: <span class="status-on"></span><br>
-        Off: <span class="status-off"></span><br>
-        Maintenance: <span class="status-maintenance"></span>
+        On: <span class="status-on">🟢</span><br>
+        Off: <span class="status-off">🔴</span><br>
+        Maintenance: <span class="status-maintenance">🟠</span>
     </p>
 </section>
 
 <section>
-    <h2> IP & PORT </h2>
-    <p><strong>IP</strong>: FireSmp002.aternos.me<br><strong>Port</strong>: 23053</p>
-    <p><strong>IP</strong>: k3.pulenstore.my.id<br><strong>Port</strong>: 12345<br>*Server on 24 hours</br></p>
+    <h2>🎮 IP & PORT 🎮</h2>
+    <p><strong>IP</strong>: FireSmp002.aternos.me<br><strong>Port</strong>: 23053<br>Server on 24 hours</p>
+    <p><strong>IP</strong>: k3.pulenstore.my.id<br><strong>Port</strong>: 12345</p>
 </section>
 
 <section>
@@ -183,7 +164,7 @@
         <li>Member baru wajib intro</li>
         <li>Jangan menghina atau mengejek sesama</li>
         <li>Harus saling berbagi dan berkenalan</li>
-        <li>No rasis, bully, body shaming, video </li>
+        <li>No rasis, bully, body shaming, video 🔞</li>
         <li>Tidak boleh menggunakan TNT sembarangan</li>
         <li>Dilarang bahas jomok, lesbi, atau sejenisnya</li>
         <li>Boleh membangun apa pun sesuai imajinasi, tapi harus rapi dan bersih</li>
@@ -198,4 +179,5 @@
 </footer>
 
 </body>
-</html>
+                            </html>
+    
