@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revilang - Web Development Language</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007bff;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --code-bg-color: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(0,123,255,0.2);
+        }
+
+        pre {
+            background-color: var(--code-bg-color);
+            border: 1px solid #e2e2e2;
+            border-radius: 4px;
+            padding: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', 'Courier', monospace;
+            color: #d63384;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #e2e2e2;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>revilang</h1>
+    <hr>
+    <p>Revilang adalah bahasa pemrograman khusus yang dirancang untuk pengembangan web, dengan fokus pada kemudahan dan fitur bawaan yang komprehensif. Bahasa ini menawarkan pendekatan unik dalam sintaks dan struktur pemrograman.</p>
+    
+    <h2>I/O (Input/Output):</h2>
+    <p>Revilang menyederhanakan operasi input dan output dengan sintaks yang intuitif. Untuk menerima input atau menampilkan output di terminal maupun di console, cukup gunakan perintah sederhana berikut:</p>
+    <pre>
+input::"masukan nama anda: ";
+output::"hello world";
+    </pre>
+    <p>Perintah <code>input::</code> digunakan untuk menerima masukan dari pengguna, sementara <code>output::</code> digunakan untuk menampilkan pesan atau variabel.</p>
+    
+    <h2>Deklarasi Variabel:</h2>
+    <p>Revilang memperkenalkan dua jenis deklarasi variabel yang berbeda:</p>
+    <pre>
+const.tipe key = value;
+flex.tipe key;
+flex.tipe key = value;
+    </pre>
+    <p>
+    - <code>const</code>: Digunakan untuk variabel yang nilainya tidak akan berubah (konstan).<br>
+    - <code>flex</code>: Digunakan untuk variabel yang nilainya dapat diubah (fleksibel).<br>
+    Kedua jenis ini mendukung berbagai tipe data seperti int(integer), float, str(string), arr(array/list), bool(boolean), dan obj(object).
+    </p>
+    
+    <h2>Assigment Variabel:</h2>
+    <p>Berbeda dengan bahasa pemrograman lain, Revilang menggunakan kata kunci 'set' untuk mengassign atau mengubah nilai variabel:</p>
+    <pre>
+set key = assigmentvalue;
+operator: =, +=, -=, /=, *=
+
+operator untuk menambah atau mengurang 1: 
+++ dan --
+    </pre>
+    <p>Operator <code>++</code> dan <code>--</code> memungkinkan increment dan decrement dengan cara yang sama seperti di bahasa C/JavaScript.</p>
+    
+    <h2>Function:</h2>
+    <p>Revilang mendukung empat jenis fungsi dengan fitur unik:</p>
+    <pre>
+function standar:
+func @name #parameter1 {
+  //isi
+}
+run@name#parameter1;
+    </pre>
+    <pre>
+function template:
+func @name #myargv::argv #myregex::regex {
+  const.arr argumen = myargv;
+  const.str pattern = r".*";
+
+  output::myregex.findall[pattern, argumen];
+  const.bool match = myregex.match[argumen, pattern];
+  
+  const.arr split = myregex.split[argumen, pattern];
+}
+
+func @name #ulang::restart #pergi::go-to-line {
+  ulang;
+  pergi::69;
+}
+
+    </pre>
+<p>fungsi ini memberikan kita template pengambilan argumen, pencocokan regex, mengulang code, dan pergi ke line tertentu. dan itu semua otomatis</p>
+
+    <pre>
+function math:
+func @name #parameterpow::pow #inisin::sin #mycos::cos #mytan::tan #parametersqrt::sqrt #acak::random {
+
+  const.int rando. = math.acak::1, 10;
+  const.int parameterpow = math.parameterpow::8, 2;
+  const.int inisin = math.inisin::angleRadius;
+  const.int mycos = math.mycos::angleRadius;
+  const.int mytan = math.mytan::angleRadius;
+  const.int parametersqrt = math.parametersqrt::16;
+}
+    </pre>
+    <p>function math adalah fungsi yang memungkinkan pengguna bahasa, menghitung matematika yang lebih kompleks, secara otomatis.</p>
+    <pre>
+function event conditional:
+func @name #mouse::mouse_right #a::ctrl+a {
+  if mouse {
+    output::"right click!!";
+  }
+}
+    </pre>
+    <p>
+    function event condisional menyediakan kondisi yang berasal dari input keyboard dan mouse. dengan kombinadi yang bisa diatur denhan mudah dan otomatis.
+    </p>
+    <p>
+    - Fungsi umum dengan parameter<br>
+    - Fungsi template dengang dukungan argv dan regex<br>
+    - Fungsi matematis dengan operasi acak<br>
+    - Fungsi event conditional yang dapat merespon event mouse atau keyboard
+    </p>
+
+    <h2>Kontrol Alur:</h2>
+    <pre>
+if conditional {
+  //isi
+} elif conditional {
+  //isi
+} else {
+  //isi
+}
+
+while conditional {
+  //isi
+}
+
+for flex.int i = 0; i < 5; i++ {
+  //isi
+}
+    </pre>
+    <p>Struktur kontrol alur mirip dengan bahasa pemrograman modern lainnya, dengan dukungan for, while, dan if-elif-else.</p>
+    <p>disini if adalah jika kondisi terpenuhi, maka yang ada didalam if akan dijalankan, elif sama seperti if tapi dengan kondisi berbeda, dan else itu jika if dan elif tidak terpenuhi, maka yang didalam else akan dijalankan</p>
+    
+    <h2>Class:</h2>
+    <pre>
+class @name {
+  //isi
+}
+    </pre>
+    <p>Revilang mendukung paradigma pemrograman berorientasi objek dengan deklarasi class yang sederhana.</p>
+    
+    <h2>Frontend:</h2>
+    <pre>
+revi.select.id::"myElementDenganId";
+revi.select.class::"myElementDenganClass";
+revi.select.tag::"div";
+revi.select::"div.divClass#divId";
+revi.select.pathTag::html/body/div.mydiv;
+    </pre>
+    <p>
+      revi itu adalah cara mengakses DOM dengan Revilang.
+      revi.select adalah memilih element seperti seleksi css.
+      revi.select.id akan memilih sesuai id element.
+      revi.select.class adalah memilih sesuai class element.
+      revi.select.tag adalah memilih sesuai tag element.
+      revi.select.pathTag adalag menyelelsi 1 element dalam html, yang didapat dari path percabangan html.
+    </p>
+    
+    <pre>
+revi.create::"p";
+revi.create::"div";
+revi.create::"div.idNya";
+    </pre>
+    revi.create adalah cara revilang membuat element
+    <pre>
+    
+const.revi div = revi.create::"div";
+const.revi myElement = revi.select.id::"myelement";
+div.append.element::myelement;
+myelement.append.text::"hallo element";
+    </pre>
+    revi.create bisa langsung diseleksi jika dimasukan di variable.
+    revi.append bisa memasukan nilai text atau element dengan cara <code>elementterpilih.append</code>. selanjutnya bisa 
+    <pre>
+mydiv.style.color::'#000';
+mydiv.revi.style::posx::0; //set ke tengah
+mydiv.reviStyle::posy::0;
+mydiv.reviStyle::font::path/to/file;
+mydiv.reviStyle::font::link;
+mydiv.reviStyle.template::header;
+mydiv.reviStyle.template::sidebar;
+
+run.public['/send']; //menghubungkan ke backend(app.route) di rute send
+
+routeId::'myrouteid'='/send';
+routeId::'second'='/second';
+run.public[myrouteid, second]; //lebih ribet, tapi bisa menyatukan beberapa id yang menghasilkan path route. 
+//path route yang dihasilkan dari id, bisa di gunakan untuk lainnya jika path route berbeda, karena berbentuk variable path.
+//selain itu, di sisi backend lebih mudah
+    </pre>
+    <p>Bagian frontend Revilang menawarkan API yang kuat untuk manipulasi DOM dengan sintaks yang intuitif. Fitur utama meliputi:</p>
+    <ul>
+        <li>Seleksi elemen berdasarkan ID, class, tag, atau path</li>
+        <li>Pembuatan elemen baru</li>
+        <li>Manipulasi struktur DOM</li>
+        <li>Pengaturan gaya dan template</li>
+    </ul>
+    
+    <h2>Backend:</h2>
+    <pre>
+app.route::'/send' {
+  run@send; //memanggil fungsi send di frontend. itu bisa juga di taruh di frontend, untuk memanggil fungsi sebaliknya.
+}
+
+app.publicData {
+  //berisi beberapa variable data yang akan dikirim ke sisi frontend, dan bisa sebliknya
+}
+
+app.idmyrouteid {
+  run@send; //route berdasarkan id
+}
+
+app.run {debug=true, host=localhost, port=5000};
+app.render::'index.html';
+    </pre>
+    <p>Backend Revilang menyediakan cara sederhana untuk:</p>
+    <ul>
+        <li>Mendefinisikan rute</li>
+        <li>mendefinisikan rute dengan id</li>
+        <li>Menjalankan aplikasi dengan konfigurasi cepat</li>
+        <li>Merender halaman HTML</li>
+    </ul>
+
+    <p><strong>Catatan:</strong> Untuk menggunakan Revilang, pastikan mengunduh bahasa dari website resmi.</p>
+</body>
+</html>
